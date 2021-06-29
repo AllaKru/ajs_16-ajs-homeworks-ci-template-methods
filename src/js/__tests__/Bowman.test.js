@@ -9,6 +9,7 @@ test('создание классa', () => {
   });
 });
 
+
 // test('Выброс ошибки в случае typeof this.name !== string', () => {
 //    expect(() => {
 //       new Character(123, 'Bowman');

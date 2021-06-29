@@ -2,35 +2,28 @@
 import Character from '../Character';
 
 test('создание классa', () => {
-  const received = new Character('Petr', 'Zombie');
-
-  expect(received).toEqual({
+  expect(new Character('Petr', 'Zombie')).toEqual({
     name: 'Petr', type: 'Zombie', health: 100, level: 1,
   });
 });
 
 test('Выброс ошибки в случае typeof this.name !== string', () => {
-  expect(() => {
-    Character(123, 'Bowman');
-  }).toThrow();
+  expect(() => new Character(123, 'Bowman')).toThrow();
 });
 
 
 test('Выброс ошибки в случае this.name.length < 2', () => {
-  expect(() => {
-    Character('O', 'Bowman');
-  }).toThrow();
+  expect(() => new Character('O', 'Bowman')).toThrow();
 });
 
 
 test('Выброс ошибки в случае this.name.length > 10', () => {
-  expect(() => {
-    Character('OUHJNNNJJJJRTCFF156238975', 'Bowman');
-  }).toThrow();
+  expect(() => new Character('OUHJNNNJJJJRTCFF156238975', 'Bowman')).toThrow();
 });
 
 test('Выброс ошибки в случае отличном от this.type', () => {
-  expect(() => {
-    Character('Dima', 'Man');
-  }).toThrow();
+  expect(() => new Character('Dima', 'Man')).toThrow();
 });
+
+// test('Выброс ошибки , () => {  expect(() => new Character(123, 'Bow2356man')).
+// toThrowError(new Error('Некорректные значения!')); });
